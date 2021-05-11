@@ -6,7 +6,7 @@
 /*   By: sfeith <sfeith@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/11 13:15:52 by sfeith        #+#    #+#                 */
-/*   Updated: 2021/05/11 13:15:53 by sfeith        ########   odam.nl         */
+/*   Updated: 2021/05/11 14:16:40 by sfeith        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ static char		*ft_read(int fd, char *new_line, int ret)
 	return (new_line);
 }
 
+/* here we read the input */
 int				get_next_line(int fd, char **line)
 {
 	int				ret;

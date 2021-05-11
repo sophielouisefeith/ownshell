@@ -6,7 +6,7 @@
 /*   By: maran <maran@student.42.fr>                  +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/07 16:04:32 by Maran         #+#    #+#                 */
-/*   Updated: 2021/05/11 13:44:32 by sfeith        ########   odam.nl         */
+/*   Updated: 2021/05/11 14:37:06 by sfeith        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,13 @@
 #include <signal.h>
 #define COLOR_PROMPT	"\033[1;34mMYOWNBASH-$ \033[0m"
 
+
+/* in this function we will give our stored data to the following structure
+1.lexer -> sort the input into a linked list saved in a struct.
+2.Parser ->
+3. 
+
+ */
 void			lexer_parser_executer(char *line, t_env **envb)
 {
 
@@ -27,6 +34,7 @@ void			lexer_parser_executer(char *line, t_env **envb)
 	pipe_status = 0;
 	sort = NULL;
 	command = NULL;
+	
 	lexer(&sort, line);
 	sort_copy = sort;
 	while (sort && g_own_exit != 258 && g_own_exit != 3)
@@ -42,7 +50,7 @@ void			lexer_parser_executer(char *line, t_env **envb)
 	free_list_parser(&command_copy);
 }
 
-/* here we write  */
+/* here we check if we used a ctrl-c or ctrl-d if not we write our prompt */
 static void		prep_start(void)
 {
 	signal(SIGQUIT, sighandler);
@@ -59,16 +67,19 @@ int				main(int argc, char **argv, char **env)
 	char		*line;
 	int			ret;
 
-	
+	// printf(" argc [%d]\n", argc);
+	// printf(" argv [%s]\n", argv[0]);
 		
 	ret = 1;
 	/* we save the environment variables in a struct which we cal envb */
 	envb = save_env(env);
 	(void)argc;
 	(void)argv;
+	/* depening on the return value of get_next_line we loop through ret */
 	while (ret > 0)
 	{
 		prep_start();
+		/* we will read the input */
 		ret = get_next_line(0, &line);
 		if (ret == 0)
 			ctrl_d();
@@ -80,6 +91,8 @@ int				main(int argc, char **argv, char **env)
 		free(line);
 		line = NULL;
 	}
+	/* here we free the entire linked list of envb */
 	free_env(envb);
+	
 	return (0);
 }

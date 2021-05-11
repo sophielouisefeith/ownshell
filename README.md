@@ -1,3 +1,15 @@
+To run your own bash please run the following commands
+
+1 Make
+2 ./minishell
+
+
+
+Structure of the project
+
+Design Architecture 
+
+
 
 what does a bash shell
 

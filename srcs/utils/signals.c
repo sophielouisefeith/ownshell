@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   signals.c                                          :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: maran <maran@student.codam.nl>               +#+                     */
+/*   By: sfeith <sfeith@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/22 14:34:10 by maran         #+#    #+#                 */
-/*   Updated: 2021/05/11 13:22:56 by sfeith        ########   odam.nl         */
+/*   Created: 2021/05/11 14:18:53 by sfeith        #+#    #+#                 */
+/*   Updated: 2021/05/11 14:19:00 by sfeith        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 

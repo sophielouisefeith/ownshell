@@ -6,7 +6,7 @@
 /*   By: sfeith <sfeith@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/11 13:15:55 by sfeith        #+#    #+#                 */
-/*   Updated: 2021/05/11 13:15:56 by sfeith        ########   odam.nl         */
+/*   Updated: 2021/05/11 14:03:25 by sfeith        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 # include <sys/uio.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdio.h>
 
 int			get_next_line(int fd, char **line);
 char		*ft_strchr_gnl(const char *s, int c);

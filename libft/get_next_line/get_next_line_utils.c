@@ -6,7 +6,7 @@
 /*   By: sfeith <sfeith@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/11 13:15:47 by sfeith        #+#    #+#                 */
-/*   Updated: 2021/05/11 13:30:09 by sfeith        ########   odam.nl         */
+/*   Updated: 2021/05/11 14:08:34 by sfeith        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ static	char	*ft_strpaste(char *dest, char const *src1, char const *src2)
 
 char			*ft_strjoin_gnl(char *s1, char *s2)
 {
+	
 	char	*str;
 	size_t	len;
 

@@ -6,7 +6,7 @@
 /*   By: maran <maran@student.42.fr>                  +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/06 17:44:54 by maran         #+#    #+#                 */
-/*   Updated: 2020/11/06 17:44:56 by maran         ########   odam.nl         */
+/*   Updated: 2021/05/11 14:35:32 by sfeith        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ static void		save_operator(char *line, int *i, int type, t_lexer **sort)
 	(*i)++;
 }
 
+/* in the lexer we will save the input and safe it in a linked list which is saved in a struct */
 void			lexer(t_lexer **sort, char *line)
 {
 	int			type;
