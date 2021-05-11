@@ -6,7 +6,7 @@
 /*   By: maran <maran@student.42.fr>                  +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/06 17:44:54 by maran         #+#    #+#                 */
-/*   Updated: 2021/05/11 14:39:35 by sfeith        ########   odam.nl         */
+/*   Updated: 2021/05/11 15:05:32 by sfeith        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ static void		save_operator(char *line, int *i, int type, t_lexer **sort)
 	else
 	{
 		token[type] = 1;
-		str = str_from_cha(line[*i]);
+		str = str_from_char(line[*i]);
 	}
 	if (type >= token_redirection_greater &&
 			type <= token_redirection_dgreater)
@@ -92,10 +92,13 @@ void			lexer(t_lexer **sort, char *line)
 	int			i;
 
 	i = 0;
-	while (line[i] && g_own_exit != 3)
+	
+	while (line[i] && g_own_exit != 3) /* if there now closing "" */
 	{
+		/*we loop through white spaces*/
 		while (is_whitespace(line[i]))
 			i++;
+		/*here we check the token*/
 		type = get_token_type(line, &i);
 		if (type == token_general)
 			save_word(line, &i, sort);

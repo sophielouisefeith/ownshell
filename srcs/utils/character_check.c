@@ -3,14 +3,23 @@
 /*                                                        ::::::::            */
 /*   character_check.c                                  :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: maran <maran@student.codam.nl>               +#+                     */
+/*   By: sfeith <sfeith@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/06 13:19:47 by maran         #+#    #+#                 */
-/*   Updated: 2020/10/30 15:44:27 by maran         ########   odam.nl         */
+/*   Created: 2021/05/11 15:03:03 by sfeith        #+#    #+#                 */
+/*   Updated: 2021/05/11 15:04:44 by sfeith        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "minishell.h"
+
+/*\t horizontal tab
+  \n new line
+  \v vertical tab
+  \f new page
+  \r carriage return
+
+ */
 
 int				is_whitespace(char c)
 {

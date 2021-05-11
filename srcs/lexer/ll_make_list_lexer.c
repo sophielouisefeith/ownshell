@@ -6,11 +6,13 @@
 /*   By: Maran <Maran@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/07 12:12:45 by Maran         #+#    #+#                 */
-/*   Updated: 2020/11/01 17:02:35 by sfeith        ########   odam.nl         */
+/*   Updated: 2021/05/11 14:51:46 by sfeith        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
+
+/* here we safe the data we collect in a linked list */
 
 t_lexer			*ll_new_node_lexer(char *str, int *token)
 {

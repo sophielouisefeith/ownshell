@@ -6,7 +6,7 @@
 /*   By: sfeith <sfeith@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 14:45:39 by sfeith        #+#    #+#                 */
-/*   Updated: 2020/11/01 19:50:41 by sfeith        ########   odam.nl         */
+/*   Updated: 2021/05/11 14:55:06 by sfeith        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ char			*not_part(char *str)
 	write(1, "bash: ", 6);
 	write(1, str, ft_strlen(str));
 	write(1, ": ", 2);
-	write(1, "multiline not part of subject\n", 29);
+	write(1, ">\n", 3);
 	write(1, "\n", 1);
 	g_exit_status = 258;
 	return (NULL);

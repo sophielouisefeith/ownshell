@@ -6,7 +6,7 @@
 /*   By: maran <maran@student.42.fr>                  +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/07 16:04:32 by Maran         #+#    #+#                 */
-/*   Updated: 2021/05/11 14:37:06 by sfeith        ########   odam.nl         */
+/*   Updated: 2021/05/11 14:51:18 by sfeith        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #define COLOR_PROMPT	"\033[1;34mMYOWNBASH-$ \033[0m"
 
 
-/* in this function we will give our stored data to the following structure
+/* 
 1.lexer -> sort the input into a linked list saved in a struct.
 2.Parser ->
 3. 
