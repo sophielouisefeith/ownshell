@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   ft_toupper.c                                       :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: msiemons <marvin@codam.nl>                   +#+                     */
+/*   By: sfeith <sfeith@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/11/01 14:46:00 by msiemons      #+#    #+#                 */
-/*   Updated: 2019/11/01 14:47:54 by msiemons      ########   odam.nl         */
+/*   Created: 2021/05/11 13:12:58 by sfeith        #+#    #+#                 */
+/*   Updated: 2021/05/11 13:13:31 by sfeith        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
