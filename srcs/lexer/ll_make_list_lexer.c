@@ -6,7 +6,7 @@
 /*   By: Maran <Maran@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/07 12:12:45 by Maran         #+#    #+#                 */
-/*   Updated: 2021/05/11 14:51:46 by sfeith        ########   odam.nl         */
+/*   Updated: 2021/05/11 15:31:56 by sfeith        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,14 @@ t_lexer			*ll_new_node_lexer(char *str, int *token)
 	new->str = str;
 	new->token = token;
 	new->next_sort = NULL;
+	/* show the different nodes */
+	printf("NODES[%s]\n", new->str);
 	return (new);
 }
 
 void			ll_lstadd_back_lexer(t_lexer **sort, t_lexer *new)
 {
+	
 	t_lexer		*list;
 
 	list = *sort;

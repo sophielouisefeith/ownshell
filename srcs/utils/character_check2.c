@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   character_check2.c                                 :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: maran <maran@student.codam.nl>               +#+                     */
+/*   By: sfeith <sfeith@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/10/30 15:56:12 by maran         #+#    #+#                 */
-/*   Updated: 2021/05/06 15:34:44 by sfeith        ########   odam.nl         */
+/*   Created: 2021/05/11 15:07:32 by sfeith        #+#    #+#                 */
+/*   Updated: 2021/05/11 15:07:36 by sfeith        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 

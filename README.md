@@ -22,3 +22,13 @@ different proccesses
 Structure and adding comments
 write a test to showcase simply all different options
 map out the design structure an its pitfalls, forking procceses and pids. 
+
+
+code opdelen in stukken en dan voor elk stuk een voorbeeld geven een test en kijken waar je dan tegen aan bent gelopen/ 
+
+
+
+
+TESTS
+
+>>>>>

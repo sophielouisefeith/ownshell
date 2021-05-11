@@ -6,7 +6,7 @@
 /*   By: maran <maran@student.42.fr>                  +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/07 16:04:32 by Maran         #+#    #+#                 */
-/*   Updated: 2021/05/11 14:51:18 by sfeith        ########   odam.nl         */
+/*   Updated: 2021/05/11 15:19:28 by sfeith        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,8 @@ int				main(int argc, char **argv, char **env)
 	envb = save_env(env);
 	(void)argc;
 	(void)argv;
-	/* depening on the return value of get_next_line we loop through ret */
+	/* depening on the return value of get_next_line we loop through ret 
+	we break this loop with an exit status or an ctrl-d */
 	while (ret > 0)
 	{
 		prep_start();
