@@ -6,7 +6,7 @@
 /*   By: maran <maran@student.42.fr>                  +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/06 17:44:54 by maran         #+#    #+#                 */
-/*   Updated: 2021/05/11 14:35:32 by sfeith        ########   odam.nl         */
+/*   Updated: 2021/05/11 14:39:35 by sfeith        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ static void		save_operator(char *line, int *i, int type, t_lexer **sort)
 	else
 	{
 		token[type] = 1;
-		str = str_from_char(line[*i]);
+		str = str_from_cha(line[*i]);
 	}
 	if (type >= token_redirection_greater &&
 			type <= token_redirection_dgreater)
