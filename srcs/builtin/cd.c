@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   cd.c                                               :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: maran <maran@student.codam.nl>               +#+                     */
+/*   By: sfeith <sfeith@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/07/27 13:31:26 by maran         #+#    #+#                 */
-/*   Updated: 2021/05/06 15:33:24 by sfeith        ########   odam.nl         */
+/*   Created: 2021/05/11 13:16:28 by sfeith        #+#    #+#                 */
+/*   Updated: 2021/05/11 13:16:34 by sfeith        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 

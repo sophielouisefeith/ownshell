@@ -6,17 +6,18 @@
 /*   By: maran <maran@student.42.fr>                  +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/07 16:04:32 by Maran         #+#    #+#                 */
-/*   Updated: 2021/05/06 15:33:15 by sfeith        ########   odam.nl         */
+/*   Updated: 2021/05/11 13:44:32 by sfeith        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 #include "../libft/get_next_line/get_next_line.h"
 #include <signal.h>
-#define COLOR_PROMPT	"\033[1;34mminishell-$ \033[0m"
+#define COLOR_PROMPT	"\033[1;34mMYOWNBASH-$ \033[0m"
 
 void			lexer_parser_executer(char *line, t_env **envb)
 {
+
 	t_lexer		*sort;
 	t_lexer		*sort_copy;
 	t_command	*command;
@@ -41,6 +42,7 @@ void			lexer_parser_executer(char *line, t_env **envb)
 	free_list_parser(&command_copy);
 }
 
+/* here we write  */
 static void		prep_start(void)
 {
 	signal(SIGQUIT, sighandler);
@@ -48,13 +50,19 @@ static void		prep_start(void)
 	write(1, COLOR_PROMPT, 23);
 }
 
+/* Start building minishell 
+env = environment variables*/
 int				main(int argc, char **argv, char **env)
 {
+	
 	t_env		*envb;
 	char		*line;
 	int			ret;
 
+	
+		
 	ret = 1;
+	/* we save the environment variables in a struct which we cal envb */
 	envb = save_env(env);
 	(void)argc;
 	(void)argv;

@@ -6,7 +6,7 @@
 /*   By: msiemons <msiemons@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/24 13:14:37 by msiemons      #+#    #+#                 */
-/*   Updated: 2021/05/06 15:35:16 by sfeith        ########   odam.nl         */
+/*   Updated: 2021/05/11 13:48:04 by sfeith        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void			ll_lstadd_back_env(t_env **env, t_env *new)
 		*env = new;
 }
 
+/* here we save the env list in a linked list, so we can later easily go through all the details */
 t_env			*save_env(char **env)
 {
 	t_env		*save_env;
@@ -59,6 +60,9 @@ t_env			*save_env(char **env)
 		free(array);
 		array = NULL;
 		y++;
+		
 	}
+	//printf("*********************** FIRST PEACH OF ENV****************** [%s]/n", env[0]);
+	
 	return (save_env);
 }

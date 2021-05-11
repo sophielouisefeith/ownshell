@@ -3,12 +3,13 @@
 /*                                                        ::::::::            */
 /*   get_next_line.h                                    :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: maran <maran@student.42.fr>                  +#+                     */
+/*   By: sfeith <sfeith@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/01/08 16:37:25 by msiemons      #+#    #+#                 */
-/*   Updated: 2020/11/06 10:14:25 by maran         ########   odam.nl         */
+/*   Created: 2021/05/11 13:15:55 by sfeith        #+#    #+#                 */
+/*   Updated: 2021/05/11 13:15:56 by sfeith        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H

@@ -3,12 +3,13 @@
 #                                                         ::::::::             #
 #    Makefile                                           :+:    :+:             #
 #                                                      +:+                     #
-#    By: maran <maran@student.42.fr>                  +#+                      #
+#    By: sfeith <sfeith@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
-#    Created: 2019/10/28 13:34:09 by msiemons      #+#    #+#                  #
-#    Updated: 2021/05/06 15:55:52 by sfeith        ########   odam.nl          #
+#    Created: 2021/05/11 13:16:14 by sfeith        #+#    #+#                  #
+#    Updated: 2021/05/11 13:16:15 by sfeith        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
+
 
 NAME = libft.a
 

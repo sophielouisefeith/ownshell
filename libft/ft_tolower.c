@@ -3,12 +3,14 @@
 /*                                                        ::::::::            */
 /*   ft_tolower.c                                       :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: msiemons <marvin@codam.nl>                   +#+                     */
+/*   By: sfeith <sfeith@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/11/01 14:51:22 by msiemons      #+#    #+#                 */
-/*   Updated: 2019/11/15 12:14:00 by msiemons      ########   odam.nl         */
+/*   Created: 2021/05/11 13:15:23 by sfeith        #+#    #+#                 */
+/*   Updated: 2021/05/11 13:15:24 by sfeith        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
+
+
 
 int		ft_tolower(int c)
 {

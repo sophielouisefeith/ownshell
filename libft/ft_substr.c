@@ -3,12 +3,14 @@
 /*                                                        ::::::::            */
 /*   ft_substr.c                                        :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: msiemons <marvin@codam.nl>                   +#+                     */
+/*   By: sfeith <sfeith@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/11/01 19:26:50 by msiemons      #+#    #+#                 */
-/*   Updated: 2019/11/21 10:26:47 by msiemons      ########   odam.nl         */
+/*   Created: 2021/05/11 13:15:30 by sfeith        #+#    #+#                 */
+/*   Updated: 2021/05/11 13:15:31 by sfeith        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
+
+
 
 #include "libft.h"
 

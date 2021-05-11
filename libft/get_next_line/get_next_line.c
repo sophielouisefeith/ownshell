@@ -3,12 +3,13 @@
 /*                                                        ::::::::            */
 /*   get_next_line.c                                    :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: maran <maran@student.42.fr>                  +#+                     */
+/*   By: sfeith <sfeith@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/01/08 16:37:30 by msiemons      #+#    #+#                 */
-/*   Updated: 2020/11/06 17:44:31 by maran         ########   odam.nl         */
+/*   Created: 2021/05/11 13:15:52 by sfeith        #+#    #+#                 */
+/*   Updated: 2021/05/11 13:15:53 by sfeith        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "get_next_line.h"
 #include "../libft.h"

@@ -6,12 +6,12 @@
 /*   By: maran <maran@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/22 14:34:10 by maran         #+#    #+#                 */
-/*   Updated: 2020/11/01 16:29:37 by sfeith        ########   odam.nl         */
+/*   Updated: 2021/05/11 13:22:56 by sfeith        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
-#define COLOR_PROMPT	"\033[1;34mminishell-$ \033[0m"
+#define COLOR_PROMPT	"\033[1;34mMYONWBASH-$ \033[0m"
 
 void			ctrl_d(void)
 {
