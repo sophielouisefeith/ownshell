@@ -1,3 +1,5 @@
+£Minishell for element
+
 To run your own bash please run the following commands
 
 1 Make
@@ -8,19 +10,9 @@ code run through main.c
 always use the function on the bottom as a starting point 
 
 
-Structure of the project
+-Structure of the project
 
-Design Architecture 
-
-
-
-what does a bash shell
-
-what do i want to acomplish 
-what do i need fot it
-
-different proccesses
-
+-Design Architecture 
 
 Structure and adding comments
 write a test to showcase simply all different options
