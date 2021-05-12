@@ -6,7 +6,7 @@
 /*   By: sfeith <sfeith@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 14:45:39 by sfeith        #+#    #+#                 */
-/*   Updated: 2021/05/11 14:55:06 by sfeith        ########   odam.nl         */
+/*   Updated: 2021/05/12 12:27:51 by sfeith        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ char			*error_command(char *str, int i, t_command *command)
 	return (str);
 }
 
+/* exit status when it's not part of the subject, in this case we display >  */
 char			*not_part(char *str)
 {
 	write(1, "bash: ", 6);

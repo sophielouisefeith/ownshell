@@ -6,14 +6,17 @@
 /*   By: msiemons <msiemons@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/16 15:51:41 by msiemons      #+#    #+#                 */
-/*   Updated: 2020/11/01 16:41:28 by sfeith        ########   odam.nl         */
+/*   Updated: 2021/05/12 12:21:53 by sfeith        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
+/* in check_redirecitons we all the edge cases 
+ */
 int				check_redirections(char *line, int i, int type)
 {
+	
 	i++;
 	while (is_whitespace(line[i]))
 		i++;

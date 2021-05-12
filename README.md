@@ -3,6 +3,9 @@ To run your own bash please run the following commands
 1 Make
 2 ./minishell
 
+Norm.
+code run through main.c
+always use the function on the bottom as a starting point 
 
 
 Structure of the project

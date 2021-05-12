@@ -3,15 +3,17 @@
 /*                                                        ::::::::            */
 /*   lexer.c                                            :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: maran <maran@student.42.fr>                  +#+                     */
+/*   By: sfeith <sfeith@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/06 17:44:54 by maran         #+#    #+#                 */
-/*   Updated: 2021/05/11 15:30:13 by sfeith        ########   odam.nl         */
+/*   Created: 2021/05/12 12:27:06 by sfeith        #+#    #+#                 */
+/*   Updated: 2021/05/12 12:43:36 by sfeith        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
+/* Check if the quotantions are completed if 
+not return error and set exit status  */
 static void		check_quotation_complete(char quote, char *line, int *i)
 {
 	(*i)++;
@@ -26,6 +28,8 @@ static void		check_quotation_complete(char quote, char *line, int *i)
 		return ;
 	else
 	{
+		/* not part means not part of the subject, we display > and 
+		set the exit status therefore we would not continue once we arrive at the parser */
 		not_part(line);
 		g_own_exit = 3;
 		g_exit_status = 1;
@@ -34,8 +38,10 @@ static void		check_quotation_complete(char quote, char *line, int *i)
 
 static void		check_meta_and_quote(char *line, int *i)
 {
+	/* if no whitespace or operator meaning > etc */
 	while ((!is_metachar(line[*i])) && line[*i])
 	{
+		/* if yes there will be qoutes and we will check if there double */
 		if ((is_single_quote(line[*i]) || is_double_quote(line[*i])) &&
 				line[(*i) - 1] != '\\')
 			check_quotation_complete(line[*i], line, i);
@@ -43,7 +49,8 @@ static void		check_meta_and_quote(char *line, int *i)
 	}
 }
 
-/* in safe word we will safe all the words of the string */
+/* The input we receive would be divided in different str -> safed in the linked list lexer
+uncommand printf to see the results */
 static void		save_word(char *line, int *i, t_lexer **sort)
 {
 	t_lexer		*tmp;
@@ -55,7 +62,6 @@ static void		save_word(char *line, int *i, t_lexer **sort)
 	token = allocate_memory_int_string(12);
 	token[token_general] = 1;
 	check_meta_and_quote(line, i);
-	/* we want to take a peace */
 	str = ft_substr(line, start, (*i - start));
 	printf("lexer[%s]\n", str);
 	
@@ -71,8 +77,11 @@ static void		save_operator(char *line, int *i, int type, t_lexer **sort)
 	char		*str;
 	int			*token;
 
+
+	printf("i come here because there is a pipe or redirection is detected\n");
 	/* we make space for token on the stack */
 	token = allocate_memory_int_string(12);
+	/* in the following if statements we will safe the correct data in str */
 	if (type == token_redirection_greater && line[*i + 1] == '>')
 	{
 		(*i)++;
@@ -87,7 +96,10 @@ static void		save_operator(char *line, int *i, int type, t_lexer **sort)
 	if (type >= token_redirection_greater &&
 			type <= token_redirection_dgreater)
 		token[token_redirection] = check_redirections(line, *i, type);
+	
 	tmp = ll_new_node_lexer(str, token);
+	/* depending on the above if statements we wil safe the str */
+	printf("str for new node[%s]\n", tmp->str);
 	ll_lstadd_back_lexer(sort, tmp);
 	(*i)++;
 }
@@ -105,7 +117,7 @@ void			lexer(t_lexer **sort, char *line)
 		/*we loop through white spaces*/
 		while (is_whitespace(line[i]))
 			i++;
-		/*here we check the tokentype -> an enum in the header file*/
+		/*here we check the tokentype -> saved in an enum in the header file*/
 		type = get_token_type(line, &i);
 		/*if it's general it means we start with no token */
 		if (type == token_general)
@@ -113,6 +125,8 @@ void			lexer(t_lexer **sort, char *line)
 			printf("token is general/n");
 			save_word(line, &i, sort);
 		}
+		/* here we check if pipes are used  
+		example echo hallo | > hallo*/
 		if (type >= token_pipe && type <= token_redirection_lesser)
 			save_operator(line, &i, type, sort);
 		type = 0;
