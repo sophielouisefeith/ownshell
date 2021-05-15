@@ -21,6 +21,18 @@ orignally a co working project with Maran Siemons
 
 ```
 
+
+## Structure of the project
+
+```
+1. Lexer
+```
+2. Parser
+
+```
+3. executor
+
+
 TESTS
 
 >>>>>
