@@ -6,7 +6,7 @@
 /*   By: SophieLouiseFeith <SophieLouiseFeith@st      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/24 14:13:18 by sfeith        #+#    #+#                 */
-/*   Updated: 2021/05/15 19:20:55 by SophieLouis   ########   odam.nl         */
+/*   Updated: 2021/05/15 20:33:17 by SophieLouis   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ static void		invoke_another_program(t_command **command, t_env **envb)
 	int			status;
 	char		**array;
 
+	printf("forkchild\n");
 	signal(SIGINT, signal_reset);
 	signal(SIGQUIT, signal_reset);
 	array = env_ll_to_array(*envb);
@@ -32,12 +33,14 @@ static void		invoke_another_program(t_command **command, t_env **envb)
 		write(1, strerror(errno), ft_strlen(strerror(errno)));
 	if (pid == 0)
 	{
+		printf("forkchild\n");
 		execve((*command)->array[0], (*command)->array, array);
 		errno_error((*command)->array[0], *command);
 		exit(g_exit_status);
 	}
 	if (pid != 0)
 	{
+		printf("forkchild\n");
 		waitpid(pid, &status, 0);
 		if (WIFSIGNALED(status))
 			sighandler_execve(WTERMSIG(status));
@@ -51,7 +54,10 @@ static void		invoke_another_program(t_command **command, t_env **envb)
 void			builtin_another_program(t_command **command, t_env **envb)
 {
 	if ((*command)->builtin == builtin_no || (*command)->builtin == executable)
+	{
+		printf("builtin antother programm/n");
 		invoke_another_program(command, envb);
+	}
 	if ((*command)->builtin != builtin_no_com && (*command)->builtin !=
 			builtin_no && (*command)->builtin != executable)
 		execute_builtin(command, envb);

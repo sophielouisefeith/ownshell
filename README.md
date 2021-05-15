@@ -19,6 +19,7 @@ orignally a co working project with Maran Siemons
 ```
 1. make
 2. ./minishell
+3. exit ctrl d
 
 ```
 
@@ -60,6 +61,8 @@ orignally a co working project with Maran Siemons
 
 ```
 1. Video showing examples
-2. 
-3. 
+2. builtins
+3. exit status
+4. env
+5. bin
 ```
