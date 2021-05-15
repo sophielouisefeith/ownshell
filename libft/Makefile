@@ -1,16 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         ::::::::             #
-#    Makefile                                           :+:    :+:             #
-#                                                      +:+                     #
-#    By: sfeith <sfeith@student.codam.nl>             +#+                      #
-#                                                    +#+                       #
-#    Created: 2021/05/11 13:16:14 by sfeith        #+#    #+#                  #
-#    Updated: 2021/05/11 13:16:15 by sfeith        ########   odam.nl          #
-#                                                                              #
-# **************************************************************************** #
-
-
 NAME = libft.a
 
 SRC =	ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
