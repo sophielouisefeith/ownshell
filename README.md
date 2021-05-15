@@ -30,9 +30,12 @@ The existence of shells is linked to the very existence of IT. At the time, all 
 ## Structure of the project
 
 ```
+0. libft -libary ( personal libary with self written functions simulating origanl c functions)
+
 1. Lexer
 2. Parser
 3. executor
+
 
 ```
 

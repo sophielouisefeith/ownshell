@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        ::::::::            */
-/*   output.c                                           :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: msiemons <msiemons@student.codam.nl>         +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2020/11/01 18:00:23 by msiemons      #+#    #+#                 */
-/*   Updated: 2020/11/01 18:00:26 by msiemons      ########   odam.nl         */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "minishell.h"
 
 static t_output		*ll_new_node_output(char *str_output, int token)

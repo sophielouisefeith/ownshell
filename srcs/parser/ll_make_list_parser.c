@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        ::::::::            */
-/*   ll_make_list_parser.c                              :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: maran <maran@student.codam.nl>               +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2020/08/13 10:17:35 by maran         #+#    #+#                 */
-/*   Updated: 2020/10/31 21:10:22 by msiemons      ########   odam.nl         */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "minishell.h"
 
 t_command		*ll_new_node_command(int num_nodes, int builtin)
