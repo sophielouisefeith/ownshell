@@ -10,6 +10,7 @@ orignally a co working project with Maran Siemons
 * [ Design Architecture])
 * [ Challenges]
 * [ Optimalisatation )]
+* [ Tests)]
 
 ---
 
@@ -37,6 +38,18 @@ orignally a co working project with Maran Siemons
 1. Edge cases
 2. Memory
 3. Processes
+    - fork processes
+    - Binary tree
+```
+
+##optimalisation
+
+```
+1. No clue
+2. Process
+3. Binary tree
+    - 
+    - 
 ```
 
 
