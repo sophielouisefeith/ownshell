@@ -20,7 +20,7 @@ The existence of shells is linked to the very existence of IT. At the time, all 
 ## How to execute the program
 
 ```
-0. run run.sh
+0. run ./run.sh
 or
 1. make
 2. ./minishell
@@ -33,7 +33,8 @@ both cases
 ## Structure of the project
 
 ```
-0. libft -libary ( personal libary with self written functions simulating origanl c functions)
+0. libft -libary ( personal libary with self 
+written functions simulating origanl c functions)
 
 1. Lexer
 2. Parser

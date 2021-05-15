@@ -1,19 +1,7 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        ::::::::            */
-/*   main.c                                             :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: maran <maran@student.42.fr>                  +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2020/07/07 16:04:32 by Maran         #+#    #+#                 */
-/*   Updated: 2021/05/11 15:19:28 by sfeith        ########   odam.nl         */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "minishell.h"
 #include "../libft/get_next_line/get_next_line.h"
 #include <signal.h>
-#define COLOR_PROMPT	"\033[1;34mMYOWNBASH-$ \033[0m"
+#define COLOR_PROMPT	"\033[1;34mYOUR-OWN-BASH-$ \033[0m"
 
 
 /* 
