@@ -1,8 +1,17 @@
-#Minishell for element
+# Minishell for element
+orignally a co working project with Maran Siemons
 
-# orignally a co working project with Maran Siemons
+---
+# Index 
 
-# To run your own bash please run the following commands
+* [ Run shell])
+* [ Structure of the projet])
+* [ Design Architecture])
+* [ Optimalisatation )]
+
+---
+
+## Run shell
 
 1 Make
 2 ./minishell
