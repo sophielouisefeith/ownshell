@@ -5,22 +5,19 @@ orignally a co working project with Maran Siemons
 ---
 # Index 
 
-* [ Run shell])
+* [ How to execute the program)
 * [ Structure of the projet])
 * [ Design Architecture])
 * [ Optimalisatation )]
 
 ---
 
-## Run shell
+## How to execute the program
 
 ```
-make
-
+1. make
 ```
-
-
-./minishell
+2. ./minishell
 
 ```
 
