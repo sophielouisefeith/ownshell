@@ -42,17 +42,17 @@ orignally a co working project with Maran Siemons
 5. Processes
     - fork processes
     - Binary tree
-
+6.Research
 ```
 
-##optimalisation
+## Optimalisation
 
 ```
 1. start of the project No clue
 2. Process
 3. Binary tree
-    - 
-    - 
+    - organising a complex project
+    - Mapping out a architecture 
 ```
 
 
