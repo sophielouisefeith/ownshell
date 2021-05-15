@@ -1,6 +1,8 @@
-£Minishell for element
+#Minishell for element
 
-To run your own bash please run the following commands
+# orignally a co working project with Maran Siemons
+
+# To run your own bash please run the following commands
 
 1 Make
 2 ./minishell

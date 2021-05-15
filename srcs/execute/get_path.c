@@ -3,12 +3,13 @@
 /*                                                        ::::::::            */
 /*   get_path.c                                         :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: maran <maran@student.42.fr>                  +#+                     */
+/*   By: SophieLouiseFeith <SophieLouiseFeith@st      +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/09/02 11:52:10 by sfeith        #+#    #+#                 */
-/*   Updated: 2020/11/06 18:32:35 by maran         ########   odam.nl         */
+/*   Created: 2021/05/15 16:11:47 by SophieLouis   #+#    #+#                 */
+/*   Updated: 2021/05/15 16:11:51 by SophieLouis   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "minishell.h"
 #include <dirent.h>

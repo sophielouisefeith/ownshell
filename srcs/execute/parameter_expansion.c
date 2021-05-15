@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        ::::::::            */
-/*   parameter_expansion.c                              :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: maran <maran@student.codam.nl>               +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2020/08/27 15:09:52 by maran         #+#    #+#                 */
-/*   Updated: 2020/11/01 20:31:54 by sfeith        ########   odam.nl         */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "minishell.h"
 
 void			parameter_not_exist(t_command **command, int *y)
