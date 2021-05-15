@@ -17,7 +17,6 @@ orignally a co working project with Maran Siemons
 
 ```
 1. make
-```
 2. ./minishell
 
 ```
@@ -27,10 +26,7 @@ orignally a co working project with Maran Siemons
 
 ```
 1. Lexer
-```
 2. Parser
-
-```
 3. executor
 
 ```
