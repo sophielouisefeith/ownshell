@@ -1,4 +1,5 @@
 # Minishell for element
+A Programm written in C simulating the origanl Bash/shell
 orignally a co working project with Maran Siemons
 
 ---
@@ -17,8 +18,11 @@ orignally a co working project with Maran Siemons
 make
 
 ```
+
+
 ./minishell
 
+```
 
 TESTS
 
