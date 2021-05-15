@@ -20,9 +20,12 @@ The existence of shells is linked to the very existence of IT. At the time, all 
 ## How to execute the program
 
 ```
+0. run run.sh
+or
 1. make
 2. ./minishell
-3. exit ctrl d
+both cases
+-exit ctrl d
 
 ```
 

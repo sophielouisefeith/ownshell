@@ -6,7 +6,7 @@
 /*   By: SophieLouiseFeith <SophieLouiseFeith@st      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/24 14:13:18 by sfeith        #+#    #+#                 */
-/*   Updated: 2021/05/15 20:33:17 by SophieLouis   ########   odam.nl         */
+/*   Updated: 2021/05/15 20:52:12 by SophieLouis   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,20 @@
 
 /* when using pipes or redirections you run two programmes therefore we nee to make use 
 of a parent and a child */
+
+/*Omdat beide processen dezelfde programmacode gebruiken, namelijk die van
+ het originele proces dat de fork uitvoerde, moet deze programmacode zowel 
+ de functionaliteit van het ouderproces als die van het kindproces bevatten. 
+ Welke van de twee uitgevoerd moet worden, wordt bepaald aan de hand van de returnwaarde 
+ van fork(): in het kindproces geeft fork() de waarde 0 terug als returnwaarde en in het ouderproces 
+ de PID van het nieuw gecreëerde proces (deze is altijd groter dan 0: het procesid 0 is gereserveerd 
+ voor het speciale init-proces dat tijdens het opstarten van het systeem gecreëerd wordt).
+
+If return 	 0 		het is gelukt met het creeren van een child process/
+If return	 -1 		het is niet gelukt met het creeren van een child process.
+If return	 + 		fork() returns a positive value, the process ID of the child process, to the parent. The returned process ID is of type pid_t defined in sys/types.h. Normally, the process ID is an integer. Moreover, a process can use function getpid() to retrieve the process ID assigned to this process.
+PID = PROCESS ID ;)
+*/
 
 static void		invoke_another_program(t_command **command, t_env **envb)
 {
