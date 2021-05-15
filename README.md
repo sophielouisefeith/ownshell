@@ -33,6 +33,13 @@ orignally a co working project with Maran Siemons
 
 ## Challenges 
 
-TESTS
+```
+1. Edge cases
+2. Memory
+3. Processes
+```
+
+
+## Tests
 
 >>>>>
