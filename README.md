@@ -36,16 +36,19 @@ orignally a co working project with Maran Siemons
 
 ```
 1. Edge cases
-2. Memory
-3. Processes
+2. structs/linked list
+3. pointers adresses
+4. Memory
+5. Processes
     - fork processes
     - Binary tree
+
 ```
 
 ##optimalisation
 
 ```
-1. No clue
+1. start of the project No clue
 2. Process
 3. Binary tree
     - 
