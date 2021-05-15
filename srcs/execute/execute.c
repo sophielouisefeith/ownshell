@@ -3,16 +3,20 @@
 /*                                                        ::::::::            */
 /*   execute.c                                          :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: maran <maran@student.42.fr>                  +#+                     */
+/*   By: SophieLouiseFeith <SophieLouiseFeith@st      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/24 14:13:18 by sfeith        #+#    #+#                 */
-/*   Updated: 2021/05/06 15:35:32 by sfeith        ########   odam.nl         */
+/*   Updated: 2021/05/15 19:20:55 by SophieLouis   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 #include <fcntl.h>
 #include <sys/wait.h>
+
+
+/* when using pipes or redirections you run two programmes therefore we nee to make use 
+of a parent and a child */
 
 static void		invoke_another_program(t_command **command, t_env **envb)
 {
@@ -43,6 +47,7 @@ static void		invoke_another_program(t_command **command, t_env **envb)
 	}
 }
 
+/* decide which processes to run */
 void			builtin_another_program(t_command **command, t_env **envb)
 {
 	if ((*command)->builtin == builtin_no || (*command)->builtin == executable)
@@ -92,6 +97,13 @@ static int		determine_fdin(t_command *command, t_execute **exe)
 	return (0);
 }
 
+
+
+/* execute 
+1. malloc check
+2. loop through the command list
+
+ */
 void			*execute(t_command **command, t_env **envb)
 {
 	t_execute	*exe;

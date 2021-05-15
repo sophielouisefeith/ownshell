@@ -8,6 +8,7 @@ orignally a co working project with Maran Siemons
 * [ How to execute the program)
 * [ Structure of the projet])
 * [ Design Architecture])
+* [ Challenges]
 * [ Optimalisatation )]
 
 ---
@@ -32,6 +33,9 @@ orignally a co working project with Maran Siemons
 ```
 3. executor
 
+```
+
+## Challenges 
 
 TESTS
 

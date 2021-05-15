@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   execute_utils.c                                    :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: maran <maran@student.codam.nl>               +#+                     */
+/*   By: SophieLouiseFeith <SophieLouiseFeith@st      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/20 11:24:12 by maran         #+#    #+#                 */
-/*   Updated: 2020/11/01 20:36:48 by sfeith        ########   odam.nl         */
+/*   Updated: 2021/05/15 19:16:04 by SophieLouis   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,14 @@ void			*clean_exit_execute(t_execute **exe)
 	free(*exe);
 	return (0);
 }
+
+
+/* when empty return malloc fail
+1. dup 
+
+
+*/
+
 
 void			initialise_execute(t_command *command, t_execute **exe)
 {
