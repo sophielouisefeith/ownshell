@@ -30,13 +30,15 @@ or
 exit
 both cases
 ctrl d
-
+Congratz now your in your own BASH
 ```
 
 
 ## Structure of the project
 
 ```
+
+0.00 Abstract syntax tree
 0. libft -libary ( personal libary with self 
 written functions simulating origanl c functions)
 
