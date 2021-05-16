@@ -25,6 +25,7 @@ void			swap_int(int *s1, int *s2)
 	*s1 = tmp;
 }
 
+/* making sure the env list is in alphabet chrono*/
 void			alpha_env_list(t_env *alpha_env)
 {
 	t_env		*list1;

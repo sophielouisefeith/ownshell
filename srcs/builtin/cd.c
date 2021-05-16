@@ -1,11 +1,13 @@
 
-
+/* this following functions  simulate a workin cd from the orignal bash*/
 
 
 
 #include "minishell.h"
 #include <limits.h>
 
+/* look for the old pwd and place this on 
+the bottom of the env list */
 static void		check_old_pwd(t_env **envb, char *old_path)
 {
 	t_env	*copy_env;
@@ -28,6 +30,8 @@ static void		check_old_pwd(t_env **envb, char *old_path)
 	ll_lstadd_back_env(envb, tmp);
 }
 
+/* look for the old pwd and place this on 
+the bottom of the env list */
 static void		change_env_pwd(t_env **envb)
 {
 	t_env	*copy_env;
@@ -35,6 +39,7 @@ static void		change_env_pwd(t_env **envb)
 	char	*path;
 
 	copy_env = *envb;
+	/* getcwd get's the current path name */
 	path = getcwd(NULL, 0);
 	if (path == NULL)
 		strerror(errno);
@@ -51,6 +56,8 @@ static void		change_env_pwd(t_env **envb)
 		copy_env = copy_env->next;
 	}
 }
+
+
 
 static int		execute_cd_ex(t_command *command,
 char *home, t_env **envb, int ret)
@@ -72,6 +79,10 @@ char *home, t_env **envb, int ret)
 	return (ret);
 }
 
+/* 1.we read the env list and get the current value of home 
+   2.wiht chdir we change the current directory with the new directory
+   3.As a last stap we change the env list to make i acurate with the new path
+*/
 int				execute_cd(t_command *command, t_env **envb)
 {
 	int		ret;
@@ -84,6 +95,9 @@ int				execute_cd(t_command *command, t_env **envb)
 	else
 	{
 		home = search_node(*envb, ft_strdup("HOME"));
+		/*The chdir command is a system function 
+		(system call) which is used to change 
+		the current working directory*/
 		ret = chdir(home);
 		free(home);
 		if (ret == -1)

@@ -37,6 +37,10 @@ Congratz now your in your own BASH
 ## Structure of the project
 
 ```
+-Makefile
+-main.c following a norm the function on 
+the bottom of each file is the start function
+
 
 0.00 Abstract syntax tree
 0. libft -libary ( personal libary with self 
