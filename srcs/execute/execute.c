@@ -3,9 +3,6 @@
 #include <sys/wait.h>
 
 
-/* when using pipes or redirections you run two programmes therefore we nee to make use 
-of a parent and a child */
-
 /*Omdat beide processen dezelfde programmacode gebruiken, namelijk die van
  het originele proces dat de fork uitvoerde, moet deze programmacode zowel 
  de functionaliteit van het ouderproces als die van het kindproces bevatten. 
@@ -26,29 +23,39 @@ static void		invoke_another_program(t_command **command, t_env **envb)
 	int			status;
 	char		**array;
 
-	printf("forkchild\n");
+	
 	signal(SIGINT, signal_reset);
 	signal(SIGQUIT, signal_reset);
 	array = env_ll_to_array(*envb);
 	pid = fork();
+																									printf("***********************************---pid[%d]\n", pid);
+
+	if (pid != 0)
+	{
+		/* waitpid waits till one of the childeren terminates*/
+		waitpid(pid, &status, 0);
+		if (WIFSIGNALED(status))
+		{
+			
+			sighandler_execve(WTERMSIG(status));
+		}
+		if (WIFEXITED(status))
+		{
+			g_exit_status = WEXITSTATUS(status);
+			
+		}
+		free_array(array);
+	}
 	if (pid == -1)
 		write(1, strerror(errno), ft_strlen(strerror(errno)));
 	if (pid == 0)
 	{
-		printf("forkchild\n");
+		printf("child\n");
+		/* int execve(const char *pathname, char *const argv[],
+        char *const envp[]);*/
 		execve((*command)->array[0], (*command)->array, array);
 		errno_error((*command)->array[0], *command);
 		exit(g_exit_status);
-	}
-	if (pid != 0)
-	{
-		printf("forkchild\n");
-		waitpid(pid, &status, 0);
-		if (WIFSIGNALED(status))
-			sighandler_execve(WTERMSIG(status));
-		if (WIFEXITED(status))
-			g_exit_status = WEXITSTATUS(status);
-		free_array(array);
 	}
 }
 
@@ -57,12 +64,16 @@ void			builtin_another_program(t_command **command, t_env **envb)
 {
 	if ((*command)->builtin == builtin_no || (*command)->builtin == executable)
 	{
-		printf("builtin antother programm/n");
+																									printf("************************************---builtin antother programm---\n");
 		invoke_another_program(command, envb);
 	}
+	/* here we execute the builtin */
 	if ((*command)->builtin != builtin_no_com && (*command)->builtin !=
 			builtin_no && (*command)->builtin != executable)
-		execute_builtin(command, envb);
+		{
+																									printf("************************************---execute buildin--\n");
+			execute_builtin(command, envb);
+		}
 }
 
 /* here we decide what needs to be printed when we have a pipe */  
@@ -93,9 +104,11 @@ static void		determine_fdout(t_command **command, t_execute **exe,
 
 static int		determine_fdin(t_command *command, t_execute **exe)
 {
+																									printf("************************************---determine fdin---\n");
 	
 	if (command->input)
 	{
+																									printf("************************************---[%s]\n", command->input->str_input);
 		(*exe)->fdin = open(command->input->str_input, O_RDONLY);
 		if ((*exe)->fdin == -1)
 		{
@@ -103,6 +116,7 @@ static int		determine_fdin(t_command *command, t_execute **exe)
 			return (errno_error(command->input->str_input, command));
 		}
 	}
+	/*The dup2() function duplicates an open file descriptor*/
 	dup2((*exe)->fdin, 0);
 	close((*exe)->fdin);
 	return (0);
@@ -111,8 +125,8 @@ static int		determine_fdin(t_command *command, t_execute **exe)
 
 
 /* with all the collected data we will use execute to 
-1. malloc check
-2. loop through the command list
+1. 
+2. 
 
  */
 void			*execute(t_command **command, t_env **envb)

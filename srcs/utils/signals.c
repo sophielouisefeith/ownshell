@@ -1,5 +1,5 @@
 #include "minishell.h"
-#define COLOR_PROMPT	"\033[1;34MMYONWBASH-$ \033[0m"
+#define COLOR_PROMPT	"\033[1;34YOUR-OWN-BASH-$ \033[0m"
 
 void			ctrl_d(void)
 {
