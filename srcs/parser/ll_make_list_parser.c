@@ -1,5 +1,7 @@
 #include "minishell.h"
 
+/* fill the linked list command */
+
 t_command		*ll_new_node_command(int num_nodes, int builtin)
 {
 	t_command	*new;

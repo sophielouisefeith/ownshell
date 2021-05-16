@@ -1,13 +1,14 @@
 #include "minishell.h"
 #include "../libft/get_next_line/get_next_line.h"
 #include <signal.h>
-#define COLOR_PROMPT	"\033[1;34mYOUR-OWN-BASH-$ \033[0m"
+#define COLOR_PROMPT	"YOUR-OWN-BASH-"
+						
 
 
 /* 
 1.lexer -> sort the input into a linked list saved in a struct.
-2.Parser ->
-3. 
+2.Parser -> Gives value to input
+3.Execute -> excutes the value according to set rules
 
  */
 void			lexer_parser_executer(char *line, t_env **envb)
@@ -23,11 +24,17 @@ void			lexer_parser_executer(char *line, t_env **envb)
 	sort = NULL;
 	command = NULL;
 	
+	
 	lexer(&sort, line);
 	sort_copy = sort;
+	printf("pipe status[%d]\n", pipe_status);
+	printf("g_own_exit[%d]\n", g_own_exit);
+	printf("g_own_exit[%d]\n", g_own_exit);
 	while (sort && g_own_exit != 258 && g_own_exit != 3)
 	{
 		pipe_status = parser(&sort, &command, pipe_status);
+		printf("parser pipe status[%d]\n", pipe_status);
+		/* go to next node */
 		if (sort)
 			sort = sort->next_sort;
 	}
@@ -43,11 +50,13 @@ static void		prep_start(void)
 {
 	signal(SIGQUIT, sighandler);
 	signal(SIGINT, sighandler);
-	write(1, COLOR_PROMPT, 23);
+	write(1, COLOR_PROMPT, 15);
 }
 
 /* Start building minishell 
-env = environment variables*/
+env = environment variables
+read input
+check Signals*/
 int				main(int argc, char **argv, char **env)
 {
 	
@@ -55,9 +64,6 @@ int				main(int argc, char **argv, char **env)
 	char		*line;
 	int			ret;
 
-	// printf(" argc [%d]\n", argc);
-	// printf(" argv [%s]\n", argv[0]);
-		
 	ret = 1;
 	/* we save the environment variables in a struct which we cal envb */
 	envb = save_env(env);

@@ -79,6 +79,9 @@ static void		fill_array(t_lexer **sort, t_command **tmp)
 		(*tmp)->array[y] = 0;
 }
 
+/* we receive  the link list sort with alle the information 
+fill enum builtin type fill the struct of parser
+*/
 int				parser(t_lexer **sort, t_command **command, int pipe_status)
 {
 	t_command	*tmp;

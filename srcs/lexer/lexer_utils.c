@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   lexer_utils.c                                      :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: msiemons <msiemons@student.codam.nl>         +#+                     */
+/*   By: SophieLouiseFeith <SophieLouiseFeith@st      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/16 15:51:41 by msiemons      #+#    #+#                 */
-/*   Updated: 2021/05/12 12:21:53 by sfeith        ########   odam.nl         */
+/*   Updated: 2021/05/16 16:10:39 by SophieLouis   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
  */
 int				check_redirections(char *line, int i, int type)
 {
-	
 	i++;
 	while (is_whitespace(line[i]))
 		i++;
@@ -70,10 +69,12 @@ char			*str_from_char(char c)
 char			*str_redirection_dgreater(void)
 {
 	char		*str;
-
+	
+	
 	str = (char *)malloc(sizeof(char) * 3);
 	str[0] = '>';
 	str[1] = '>';
 	str[2] = '\0';
+	printf("str %s \n", str);
 	return (str);
 }

@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   ll_make_list_lexer.c                               :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: Maran <Maran@student.codam.nl>               +#+                     */
+/*   By: SophieLouiseFeith <SophieLouiseFeith@st      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/07/07 12:12:45 by Maran         #+#    #+#                 */
-/*   Updated: 2021/05/11 15:31:56 by sfeith        ########   odam.nl         */
+/*   Updated: 2021/05/16 15:44:16 by SophieLouis   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_lexer			*ll_new_node_lexer(char *str, int *token)
 	new->token = token;
 	new->next_sort = NULL;
 	/* show the different nodes */
-	printf("NODES[%s]\n", new->str);
+	//printf("NODES[%s]\n", new->str);
 	return (new);
 }
 

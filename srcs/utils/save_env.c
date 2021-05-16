@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   save_env.c                                         :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: msiemons <msiemons@student.codam.nl>         +#+                     */
+/*   By: SophieLouiseFeith <SophieLouiseFeith@st      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/24 13:14:37 by msiemons      #+#    #+#                 */
-/*   Updated: 2021/05/11 13:48:04 by sfeith        ########   odam.nl         */
+/*   Updated: 2021/05/16 14:33:21 by SophieLouis   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,5 @@ t_env			*save_env(char **env)
 		y++;
 		
 	}
-	//printf("*********************** FIRST PEACH OF ENV****************** [%s]/n", env[0]);
-	
 	return (save_env);
 }

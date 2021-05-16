@@ -30,6 +30,7 @@ static int		return_type_and_free(char **tmp, int type)
 	return (type);
 }
 
+/* return the right builtin type */
 int				get_builtin_type(char *str)
 {
 	char		*tmp;
@@ -91,12 +92,14 @@ int				check_builtin_node(t_lexer **sort)
 	char		*tmp;
 
 	tmp = NULL;
+	/* delete qoutes */
 	if (is_single_quote((*sort)->str[0]) || is_double_quote((*sort)->str[0]))
 	{
 		tmp = strdup_and_free(&(*sort)->str);
 		(*sort)->str = delete_quotes(tmp, tmp[0]);
 	}
 	builtin_type = get_builtin_type((*sort)->str);
+	/* when commmand starts with ; ; echo halo */
 	if (builtin_type == builtin_no && (*sort)->str[0] == ';')
 	{
 		error_command(";", 0, 0);

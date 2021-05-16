@@ -1,17 +1,5 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        ::::::::            */
-/*   signals.c                                          :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: sfeith <sfeith@student.codam.nl>             +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2021/05/11 14:18:53 by sfeith        #+#    #+#                 */
-/*   Updated: 2021/05/11 14:19:00 by sfeith        ########   odam.nl         */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "minishell.h"
-#define COLOR_PROMPT	"\033[1;34mMYONWBASH-$ \033[0m"
+#define COLOR_PROMPT	"\033[1;34MMYONWBASH-$ \033[0m"
 
 void			ctrl_d(void)
 {

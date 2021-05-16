@@ -1,0 +1,8 @@
+
+
+## redirections 
+
+file 1 > hallo
+file > newfile
+
+echo hallo >>file1

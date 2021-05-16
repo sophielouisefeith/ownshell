@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   lexer.c                                            :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: sfeith <sfeith@student.codam.nl>             +#+                     */
+/*   By: SophieLouiseFeith <SophieLouiseFeith@st      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/12 12:27:06 by sfeith        #+#    #+#                 */
-/*   Updated: 2021/05/12 12:43:36 by sfeith        ########   odam.nl         */
+/*   Updated: 2021/05/16 16:10:07 by SophieLouis   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,9 @@ static void		save_word(char *line, int *i, t_lexer **sort)
 	token[token_general] = 1;
 	check_meta_and_quote(line, i);
 	str = ft_substr(line, start, (*i - start));
-	printf("lexer[%s]\n", str);
-	
 	tmp = ll_new_node_lexer(str, token);
-	//printf("tmp[%s]\n", lexer->tmp);
+	// printf("NODES[%s]\n", tmp->str);
+	/* put the filled note to the end of the list*/
 	ll_lstadd_back_lexer(sort, tmp);
 	
 }
@@ -78,7 +77,6 @@ static void		save_operator(char *line, int *i, int type, t_lexer **sort)
 	int			*token;
 
 
-	printf("i come here because there is a pipe or redirection is detected\n");
 	/* we make space for token on the stack */
 	token = allocate_memory_int_string(12);
 	/* in the following if statements we will safe the correct data in str */
@@ -90,6 +88,7 @@ static void		save_operator(char *line, int *i, int type, t_lexer **sort)
 	}
 	else
 	{
+		//echo poep > daar
 		token[type] = 1;
 		str = str_from_char(line[*i]);
 	}
@@ -99,12 +98,13 @@ static void		save_operator(char *line, int *i, int type, t_lexer **sort)
 	
 	tmp = ll_new_node_lexer(str, token);
 	/* depending on the above if statements we wil safe the str */
-	printf("str for new node[%s]\n", tmp->str);
+	// printf("str for new node[%s]\n", tmp->str);
 	ll_lstadd_back_lexer(sort, tmp);
 	(*i)++;
 }
 
-/* in the lexer we will save the input and safe it in a linked list which is saved in a struct */
+/* in the lexer we will save the input and safe it in a linked
+ list which is saved in a struct */
 void			lexer(t_lexer **sort, char *line)
 {
 	int			type;
@@ -121,10 +121,7 @@ void			lexer(t_lexer **sort, char *line)
 		type = get_token_type(line, &i);
 		/*if it's general it means we start with no token */
 		if (type == token_general)
-		{
-			printf("token is general/n");
 			save_word(line, &i, sort);
-		}
 		/* here we check if pipes are used  
 		example echo hallo | > hallo*/
 		if (type >= token_pipe && type <= token_redirection_lesser)
