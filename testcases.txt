@@ -6,3 +6,13 @@ file 1 > hallo
 file > newfile
 
 echo hallo >>file1
+echo hallo >> file1
+
+
+# Export 
+
+export LOGNAME=hallo
+
+
+$hallo | grep 
+$USER | grep

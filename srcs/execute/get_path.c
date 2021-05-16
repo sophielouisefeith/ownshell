@@ -81,6 +81,7 @@ static char		*check_path(char *str, char *path)
 	return (clean_exit_check_path(tmp, new_str, str));
 }
 
+/* save the env list in a linked list */
 void			complete_path(t_command **command, t_env *envb)
 {
 	char		*str_before;
@@ -90,6 +91,7 @@ void			complete_path(t_command **command, t_env *envb)
 	str_before = NULL;
 	if ((*command)->builtin == builtin_no && (*command)->array)
 	{
+		/* we save the variables out the env list */
 		path = search_node(envb, ft_strdup("PATH"));
 		if (path)
 		{

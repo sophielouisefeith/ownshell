@@ -6,7 +6,7 @@
 /*   By: SophieLouiseFeith <SophieLouiseFeith@st      +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/05/11 13:15:52 by sfeith        #+#    #+#                 */
-/*   Updated: 2021/05/16 14:50:41 by SophieLouis   ########   odam.nl         */
+/*   Updated: 2021/05/16 17:36:52 by SophieLouis   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,5 @@ int				get_next_line(int fd, char **line)
 		free(new_line);
 		new_line = 0;
 	}
-	printf("r[%d]\n",r);
-;	return (r);
+	return (r);
 }

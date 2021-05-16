@@ -1,5 +1,6 @@
 #include "minishell.h"
 
+/* how many nodes */
 int				count_node(t_lexer **sort, int type_builtin)
 {
 	t_lexer		*list;
@@ -56,6 +57,12 @@ int				get_builtin_type(char *str)
 	else
 		return (return_type_and_free(&tmp, builtin_no));
 }
+
+/* the incoming qoutes need to be deleted to 
+prepare the outcome without qoutes
+echo "hallo"    = hallo 
+ */
+
 
 char			*delete_quotes(char *src, char garbage)
 {

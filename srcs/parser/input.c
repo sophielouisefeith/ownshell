@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        ::::::::            */
-/*   input.c                                            :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: msiemons <msiemons@student.codam.nl>         +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2020/11/01 18:00:12 by msiemons      #+#    #+#                 */
-/*   Updated: 2021/05/06 15:33:04 by sfeith        ########   odam.nl         */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "minishell.h"
 
 static t_input		*ll_new_node_input(char *str_input)
@@ -39,6 +27,7 @@ static void			ll_lstadd_back_input(t_input **input, t_input *new)
 		*input = new;
 }
 
+/* fill the input  for example file1 < hallo */ 
 void				input_fill(t_lexer **sort, t_command **tmp)
 {
 	t_input		*tmp_input;

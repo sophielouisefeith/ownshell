@@ -1,8 +1,13 @@
 
 #include "minishell.h"
 
+/* check if path == env list 
+
+safe them in name and value if we use export we can change the value
+*/
 char			*search_node(t_env *envb, char *search)
 {
+	printf("path\n");
 	while (envb)
 	{
 		if (!ft_strcmp(search, envb->name))
@@ -12,6 +17,7 @@ char			*search_node(t_env *envb, char *search)
 		}
 		envb = envb->next;
 	}
+	
 	free(search);
 	return (NULL);
 }

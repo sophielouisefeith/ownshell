@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        ::::::::            */
-/*   execute.c                                          :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: SophieLouiseFeith <SophieLouiseFeith@st      +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2020/08/24 14:13:18 by sfeith        #+#    #+#                 */
-/*   Updated: 2021/05/15 20:52:12 by SophieLouis   ########   odam.nl         */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "minishell.h"
 #include <fcntl.h>
 #include <sys/wait.h>
@@ -119,7 +107,7 @@ static int		determine_fdin(t_command *command, t_execute **exe)
 
 
 
-/* execute 
+/* with all the collected data we will use execute to 
 1. malloc check
 2. loop through the command list
 
@@ -129,6 +117,7 @@ void			*execute(t_command **command, t_env **envb)
 	t_execute	*exe;
 	int			res;
 
+	/* we will put the command list in exe*/
 	initialise_execute(*command, &exe);
 	while (exe->i < exe->len_list)
 	{

@@ -8,6 +8,7 @@ fork() returns a zero to the newly created child process.
 fork() returns a positive value, the process ID of the child process, to the parent. The returned process ID is of type pid_t defined in sys/types.h. Normally, the process ID is an integer. Moreover, a process can use function getpid() to retrieve the process ID assigned to this process.
 */
 
+/* depending on the redirections we need to fill output and input*/
 static int		redirection(t_lexer **sort, t_command **tmp)
 {
 	while ((*sort)->token[token_redirection])
@@ -59,6 +60,7 @@ t_command **tmp, int *pipe_status)
 	}
 }
 
+
 static void		fill_array(t_lexer **sort, t_command **tmp)
 {
 	int			ret;
@@ -93,11 +95,14 @@ int				parser(t_lexer **sort, t_command **command, int pipe_status)
 	num_nodes = 0;
 	builtin = check_builtin_node(sort);
 	num_nodes = count_node(sort, builtin);
+	
 	tmp = ll_new_node_command(num_nodes, builtin);
 	if (tmp == NULL)
 		return (malloc_fail());
+
 	fill_array(sort, &tmp);
 	fill_pipe_and_sem(*sort, &tmp, &pipe_status);
+	/* safe nodes */
 	ll_lstadd_back_command(command, tmp);
 	return (pipe_status);
 }
