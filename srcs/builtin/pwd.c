@@ -22,12 +22,14 @@ int				execute_pwd(t_command *command)
 	char	buf[PATH_MAX];
 	char	*path;
 
+	/* get current path */
 	path = getcwd(buf, sizeof(buf));
 	if (path == NULL)
 	{
 		strerror(errno);
 		return (-1);
 	}
+	/* edge case */
 	if ((command)->array)
 		error_pwd_unset((*command).array[0], path);
 	else

@@ -78,6 +78,7 @@ int				execute_unset(t_command *command, t_env **envb)
 		return (0);
 	if (command->array[y])
 		error_unset(command);
+	/* unset % */
 	if ((!ft_strncmp(command->array[y], "-", ft_strlen(command->array[y]))\
 	&& (*command).array[y][1] == '\0') || (*command).array[y][0] == '%')
 		error(command);
@@ -87,6 +88,7 @@ int				execute_unset(t_command *command, t_env **envb)
 		ret = is_special_char(command->array[y], 0);
 		if (ret > 0)
 			return (-1);
+		/* look for the same node */
 		first_node = compare_first_node(envb, command->array[y]);
 		if (!first_node)
 			compare_after_first_node(envb, command->array[y]);
