@@ -1,7 +1,7 @@
 #include "minishell.h"
 #include "../libft/get_next_line/get_next_line.h"
 #include <signal.h>
-#define COLOR_PROMPT	"YOUR-OWN-BASH-"
+#define COLOR_PROMPT	"YOUR-OWN-BASH-$"
 						
 
 
@@ -27,13 +27,9 @@ void			lexer_parser_executer(char *line, t_env **envb)
 	
 	lexer(&sort, line);
 	sort_copy = sort;
-	printf("pipe status[%d]\n", pipe_status);
-	printf("g_own_exit[%d]\n", g_own_exit);
-	printf("g_own_exit[%d]\n", g_own_exit);
 	while (sort && g_own_exit != 258 && g_own_exit != 3)
 	{
 		pipe_status = parser(&sort, &command, pipe_status);
-		printf("parser pipe status[%d]\n", pipe_status);
 		/* go to next node */
 		if (sort)
 			sort = sort->next_sort;
@@ -45,7 +41,8 @@ void			lexer_parser_executer(char *line, t_env **envb)
 	free_list_parser(&command_copy);
 }
 
-/* here we check if we used a ctrl-c or ctrl-d if not we write our prompt */
+/* here we check if we used a ctrl-c or 
+ctrl-d if not we write our prompt */
 static void		prep_start(void)
 {
 	signal(SIGQUIT, sighandler);

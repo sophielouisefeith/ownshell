@@ -40,6 +40,7 @@ static int		general(t_lexer **sort, char **array, int *y)
 		else
 			return (1);
 	}
+												printf("*********token-generalt[%s]\n", (*sort)->str);
 	return (0);
 }
 
@@ -63,6 +64,7 @@ t_command **tmp, int *pipe_status)
 
 static void		fill_array(t_lexer **sort, t_command **tmp)
 {
+	
 	int			ret;
 	int			y;
 

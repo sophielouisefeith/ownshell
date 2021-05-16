@@ -1,3 +1,6 @@
+/*  exit prints the original error messages
+and sets the exit status */
+
 
 #include "minishell.h"
 

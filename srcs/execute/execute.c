@@ -28,7 +28,7 @@ static void		invoke_another_program(t_command **command, t_env **envb)
 	signal(SIGQUIT, signal_reset);
 	array = env_ll_to_array(*envb);
 	pid = fork();
-																									printf("***********************************---pid[%d]\n", pid);
+																									//printf("***********************************---pid[%d]\n", pid);
 
 	if (pid != 0)
 	{
@@ -50,7 +50,7 @@ static void		invoke_another_program(t_command **command, t_env **envb)
 		write(1, strerror(errno), ft_strlen(strerror(errno)));
 	if (pid == 0)
 	{
-		printf("child\n");
+		//printf("child\n");
 		/* int execve(const char *pathname, char *const argv[],
         char *const envp[]);*/
 		execve((*command)->array[0], (*command)->array, array);
@@ -64,14 +64,14 @@ void			builtin_another_program(t_command **command, t_env **envb)
 {
 	if ((*command)->builtin == builtin_no || (*command)->builtin == executable)
 	{
-																									printf("************************************---builtin antother programm---\n");
+																									//printf("************************************---builtin antother programm---\n");
 		invoke_another_program(command, envb);
 	}
 	/* here we execute the builtin */
 	if ((*command)->builtin != builtin_no_com && (*command)->builtin !=
 			builtin_no && (*command)->builtin != executable)
 		{
-																									printf("************************************---execute buildin--\n");
+																									//printf("************************************---execute buildin--\n");
 			execute_builtin(command, envb);
 		}
 }
@@ -104,11 +104,11 @@ static void		determine_fdout(t_command **command, t_execute **exe,
 
 static int		determine_fdin(t_command *command, t_execute **exe)
 {
-																									printf("************************************---determine fdin---\n");
+																									//printf("************************************---determine fdin---\n");
 	
 	if (command->input)
 	{
-																									printf("************************************---[%s]\n", command->input->str_input);
+																									//printf("************************************---[%s]\n", command->input->str_input);
 		(*exe)->fdin = open(command->input->str_input, O_RDONLY);
 		if ((*exe)->fdin == -1)
 		{

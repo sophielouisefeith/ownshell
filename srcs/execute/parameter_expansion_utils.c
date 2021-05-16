@@ -8,7 +8,7 @@ export $USER
 */
 char			*search_node(t_env *envb, char *search)
 {
-	printf("search node path\n");
+	//printf("search node path\n");
 	while (envb)
 	{
 		if (!ft_strcmp(search, envb->name))

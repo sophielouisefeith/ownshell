@@ -86,7 +86,7 @@ static char		*check_path(char *str, char *path)
 */
 void			complete_path(t_command **command, t_env *envb)
 {
-	printf(" ******************************* Complete path\n***********************************");
+	//printf(" ******************************* Complete path\n***********************************");
 	char		*str_before;
 	char		*tmp;
 	char		*path;

@@ -1,7 +1,8 @@
 
-/* this following functions  simulate a workin cd from the orignal bash*/
+/* this following functions  simulate a working
+cd from the orignal bash
 
-
+note- start function on the bottom*/
 
 #include "minishell.h"
 #include <limits.h>
@@ -30,8 +31,7 @@ static void		check_old_pwd(t_env **envb, char *old_path)
 	ll_lstadd_back_env(envb, tmp);
 }
 
-/* look for the old pwd and place this on 
-the bottom of the env list */
+/* Change the current pathname with the new pathname */
 static void		change_env_pwd(t_env **envb)
 {
 	t_env	*copy_env;
@@ -79,6 +79,7 @@ char *home, t_env **envb, int ret)
 	return (ret);
 }
 
+
 /* 1.we read the env list and get the current value of home 
    2.wiht chdir we change the current directory with the new directory
    3.As a last stap we change the env list to make i acurate with the new path
@@ -104,5 +105,6 @@ int				execute_cd(t_command *command, t_env **envb)
 			error(command);
 		change_env_pwd(envb);
 	}
+	/* value determines if the programme runned correctly*/
 	return (ret);
 }

@@ -1,6 +1,14 @@
+/* this following functions  simulate a workin 
+echo from the orignal bash
+
+note- start function on the bottom*/
 
 #include "minishell.h"
 
+
+/* 
+1. use write from the standard lib to write the array
+*/
 static int		write_echo(char **array, int y)
 {
 	int		space;
@@ -18,6 +26,14 @@ static int		write_echo(char **array, int y)
 	}
 	return (ret);
 }
+
+/* with echo you can write 
+a simple command 
+1.if array == null we write a new line
+2.write echo
+
+
+*/
 
 int				echo(char **array)
 {
