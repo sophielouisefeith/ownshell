@@ -4,14 +4,16 @@
 /* check if path == env list 
 
 safe them in name and value if we use export we can change the value
+export $USER
 */
 char			*search_node(t_env *envb, char *search)
 {
-	printf("path\n");
+	printf("search node path\n");
 	while (envb)
 	{
 		if (!ft_strcmp(search, envb->name))
 		{
+			//printf("envb[%s]\n", envb->name );
 			free(search);
 			return (ft_strdup(envb->value));
 		}

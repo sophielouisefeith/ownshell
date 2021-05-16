@@ -43,14 +43,8 @@ static char		*check_directories(char *tmp, char *patharray_i, DIR *folder)
 	return (NULL);
 }
 
-/*
-** 1. Get the PATH variable out of _env
-** 2. Save the PATH values in seperate strings
-** 3. Try to open every individual directory
-** 4. Read every entry of the directory and compare to entered string
-** 5. If entry is equal complete the entered path by
-** adding the path of directory
-*/
+
+
 
 static char		*check_path(char *str, char *path)
 {
@@ -81,7 +75,15 @@ static char		*check_path(char *str, char *path)
 	return (clean_exit_check_path(tmp, new_str, str));
 }
 
-/* save the env list in a linked list */
+
+/*
+** 1. Get the PATH variable out of _env
+** 2. Save the PATH values in seperate strings
+** 3. Try to open every individual directory
+** 4. Read every entry of the directory and compare to entered string
+** 5. If entry is equal complete the entered path by
+** adding the path of directory
+*/
 void			complete_path(t_command **command, t_env *envb)
 {
 	char		*str_before;

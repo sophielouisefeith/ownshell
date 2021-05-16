@@ -65,6 +65,8 @@ void			builtin_another_program(t_command **command, t_env **envb)
 		execute_builtin(command, envb);
 }
 
+/* here we decide what needs to be printed when we have a pipe */  
+
 static void		determine_fdout(t_command **command, t_execute **exe,
 									t_env **envb, int i)
 {
@@ -91,6 +93,7 @@ static void		determine_fdout(t_command **command, t_execute **exe,
 
 static int		determine_fdin(t_command *command, t_execute **exe)
 {
+	
 	if (command->input)
 	{
 		(*exe)->fdin = open(command->input->str_input, O_RDONLY);
@@ -122,6 +125,7 @@ void			*execute(t_command **command, t_env **envb)
 	while (exe->i < exe->len_list)
 	{
 		complete_path(command, *envb);
+		/* cat -e*/
 		res = determine_fdin(*command, &exe);
 		if (res == 3)
 			return (clean_exit_execute(&exe));

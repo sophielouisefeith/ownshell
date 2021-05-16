@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        ::::::::            */
-/*   env_ll_to_array.c                                  :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: msiemons <msiemons@student.codam.nl>         +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2020/08/24 13:21:40 by msiemons      #+#    #+#                 */
-/*   Updated: 2020/11/01 19:52:07 by msiemons      ########   odam.nl         */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "minishell.h"
 
 static int		lstsize_env(t_env *env)
@@ -25,6 +13,7 @@ static int		lstsize_env(t_env *env)
 	return (c);
 }
 
+/* building the env list */
 char			**env_ll_to_array(t_env *env)
 {
 	char	**array;
