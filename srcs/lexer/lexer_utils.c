@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        ::::::::            */
-/*   lexer_utils.c                                      :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: SophieLouiseFeith <SophieLouiseFeith@st      +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2020/07/16 15:51:41 by msiemons      #+#    #+#                 */
-/*   Updated: 2021/05/16 16:10:39 by SophieLouis   ########   odam.nl         */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "minishell.h"
 
 /* in check_redirecitons we all the edge cases 
@@ -75,6 +63,5 @@ char			*str_redirection_dgreater(void)
 	str[0] = '>';
 	str[1] = '>';
 	str[2] = '\0';
-	printf("str %s \n", str);
 	return (str);
 }

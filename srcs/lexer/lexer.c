@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        ::::::::            */
-/*   lexer.c                                            :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: SophieLouiseFeith <SophieLouiseFeith@st      +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2021/05/12 12:27:06 by sfeith        #+#    #+#                 */
-/*   Updated: 2021/05/16 16:10:07 by SophieLouis   ########   odam.nl         */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "minishell.h"
 
 /* Check if the quotantions are completed if 
@@ -88,7 +76,7 @@ static void		save_operator(char *line, int *i, int type, t_lexer **sort)
 	}
 	else
 	{
-		//echo poep > daar
+		//echo goed > daar
 		token[type] = 1;
 		str = str_from_char(line[*i]);
 	}
@@ -111,7 +99,7 @@ void			lexer(t_lexer **sort, char *line)
 	int			i;
 
 	i = 0;
-	
+																									printf("*******line[%s]", line);
 	while (line[i] && g_own_exit != 3) /* if there now closing "" */
 	{
 		/*we loop through white spaces*/

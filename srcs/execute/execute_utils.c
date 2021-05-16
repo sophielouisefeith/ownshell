@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        ::::::::            */
-/*   execute_utils.c                                    :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: SophieLouiseFeith <SophieLouiseFeith@st      +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2020/10/20 11:24:12 by maran         #+#    #+#                 */
-/*   Updated: 2021/05/15 19:16:04 by SophieLouis   ########   odam.nl         */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "minishell.h"
 
 static int		lstsize(t_command *command)

@@ -76,7 +76,7 @@ void			builtin_another_program(t_command **command, t_env **envb)
 		}
 }
 
-/* here we decide what needs to be printed when we have a pipe */  
+/* here we decide what needs to be executed when when pipe is true*/  
 
 static void		determine_fdout(t_command **command, t_execute **exe,
 									t_env **envb, int i)

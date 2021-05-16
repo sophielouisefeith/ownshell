@@ -1,18 +1,7 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        ::::::::            */
-/*   ll_make_list_lexer.c                               :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: SophieLouiseFeith <SophieLouiseFeith@st      +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2020/07/07 12:12:45 by Maran         #+#    #+#                 */
-/*   Updated: 2021/05/16 15:44:16 by SophieLouis   ########   odam.nl         */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "minishell.h"
 
-/* here we safe the data we collect in a linked list */
+/* here we safe the data we collect in a linked list this linked list is saved 
+in a struct */
 
 t_lexer			*ll_new_node_lexer(char *str, int *token)
 {

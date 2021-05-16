@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        ::::::::            */
-/*   save_env.c                                         :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: SophieLouiseFeith <SophieLouiseFeith@st      +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2020/08/24 13:14:37 by msiemons      #+#    #+#                 */
-/*   Updated: 2021/05/16 14:33:21 by SophieLouis   ########   odam.nl         */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "minishell.h"
 
 t_env			*ll_new_node_env(char *name, char *value, int equal)
@@ -24,6 +12,8 @@ t_env			*ll_new_node_env(char *name, char *value, int equal)
 	new->value = value;
 	new->equal = equal;
 	new->next = NULL;
+															//printf("***************************************envlist[%s]\n", new->name);
+															//printf("***************************************envlist[%d]\n", new->equal);
 	return (new);
 }
 
