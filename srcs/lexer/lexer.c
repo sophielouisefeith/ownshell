@@ -99,7 +99,7 @@ void			lexer(t_lexer **sort, char *line)
 	int			i;
 
 	i = 0;
-																									printf("*******line[%s]", line);
+																									//printf("*******line[%s]", line);
 	while (line[i] && g_own_exit != 3) /* if there now closing "" */
 	{
 		/*we loop through white spaces*/

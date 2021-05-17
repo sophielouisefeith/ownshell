@@ -40,7 +40,7 @@ static int		general(t_lexer **sort, char **array, int *y)
 		else
 			return (1);
 	}
-												printf("*********token-generalt[%s]\n", (*sort)->str);
+												//printf("*********token-generalt[%s]\n", (*sort)->str);
 	return (0);
 }
 

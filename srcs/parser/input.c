@@ -9,7 +9,6 @@ static t_input		*ll_new_node_input(char *str_input)
 		malloc_fail();
 	new->str_input = str_input;
 	new->next_input = NULL;
-	printf("*********output[%s]\n", new->str_input);
 	return (new);
 }
 

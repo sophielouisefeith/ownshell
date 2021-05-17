@@ -25,6 +25,7 @@ static void		check_old_pwd(t_env **envb, char *old_path)
 		}
 		copy_env = copy_env->next;
 	}
+	/* add to link list env */
 	tmp = ll_new_node_env("OLDPWD", old_path, 1);
 	if (tmp == NULL)
 		malloc_fail();
@@ -45,6 +46,7 @@ static void		change_env_pwd(t_env **envb)
 		strerror(errno);
 	while (copy_env)
 	{
+		/* */
 		if (!ft_strcmp("PWD", copy_env->name))
 		{
 			old_path = ft_strdup(copy_env->value);
@@ -64,7 +66,9 @@ char *home, t_env **envb, int ret)
 {
 	if (!ft_strcmp(command->array[0], "~/"))
 	{
+		/* we set home */
 		home = search_node(*envb, ft_strdup("HOME"));
+		/* current directory*/
 		ret = chdir(home);
 		free(home);
 		if (ret == -1)
@@ -72,6 +76,7 @@ char *home, t_env **envb, int ret)
 		change_env_pwd(envb);
 		return (ret);
 	}
+	/* fill array with current path */
 	ret = chdir(command->array[0]);
 	if (ret == -1)
 		error(command);
@@ -92,9 +97,14 @@ int				execute_cd(t_command *command, t_env **envb)
 	ret = 0;
 	home = NULL;
 	if (command->array)
+	{
+		/* cd .. we go back*/
 		return (execute_cd_ex(command, home, envb, ret));
+	}
 	else
 	{
+		/* we look for the home directory*/
+		/* get out current path out of our env list */
 		home = search_node(*envb, ft_strdup("HOME"));
 		/*The chdir command is a system function 
 		(system call) which is used to change 

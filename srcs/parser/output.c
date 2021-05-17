@@ -10,7 +10,7 @@ static t_output		*ll_new_node_output(char *str_output, int token)
 	new->str_output = str_output;
 	new->token = token;
 	new->next_output = NULL;
-																		printf("*********output[%s]\n", new->str_output);
+																		//("*********output[%s]\n", new->str_output);
 	return (new);
 }
 

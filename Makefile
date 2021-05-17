@@ -44,6 +44,7 @@ SRC =  srcs/main.c\
 		srcs/utils/utils_general.c\
 		libft/get_next_line/get_next_line.c\
 		libft/get_next_line/get_next_line_utils.c\
+		tester.c
 
 RESET			= 	\033[0m
 GREEN 			= 	\033[38;5;46m

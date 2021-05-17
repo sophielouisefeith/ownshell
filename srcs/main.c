@@ -1,12 +1,12 @@
 #include "minishell.h"
 #include "../libft/get_next_line/get_next_line.h"
 #include <signal.h>
-#define COLOR_PROMPT	"YOUR-OWN-BASH-$"
+#define COLOR_PROMPT	"YOUR-OWN-BASH-$  "
 						
 
 
 /* 
-1.lexer -> sort the input into a linked list saved in a struct.
+1.lexer -> s the input into a linked list saved in a struct.
 2.Parser -> Gives value to input
 3.Execute -> excutes the value according to set rules
 
@@ -26,6 +26,7 @@ void			lexer_parser_executer(char *line, t_env **envb)
 	
 	
 	lexer(&sort, line);
+	
 	sort_copy = sort;
 	while (sort && g_own_exit != 258 && g_own_exit != 3)
 	{
@@ -34,6 +35,7 @@ void			lexer_parser_executer(char *line, t_env **envb)
 		if (sort)
 			sort = sort->next_sort;
 	}
+	//tester(sort_copy, command);
 	command_copy = command;
 	free_list_lexer(&sort_copy);
 	if (g_own_exit == 0)
@@ -41,13 +43,17 @@ void			lexer_parser_executer(char *line, t_env **envb)
 	free_list_parser(&command_copy);
 }
 
+
+
+
+
 /* here we check if we used a ctrl-c or 
 ctrl-d if not we write our prompt */
 static void		prep_start(void)
 {
 	signal(SIGQUIT, sighandler);
 	signal(SIGINT, sighandler);
-	write(1, COLOR_PROMPT, 15);
+	write(1, COLOR_PROMPT, 18);
 }
 
 /* Start building minishell 

@@ -61,6 +61,7 @@ static char		*check_path(char *str, char *path)
 	tmp = tmp_tolower(str);
 	while (patharray && patharray[i])
 	{
+		//printf("openfolder\n");
 		folder = opendir(patharray[i]);
 		if (folder != 0)
 		{

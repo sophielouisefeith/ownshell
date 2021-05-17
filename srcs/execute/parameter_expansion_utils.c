@@ -3,8 +3,6 @@
 
 /* check if path == env list 
 
-safe them in name and value if we use export we can change the value
-export $USER
 */
 char			*search_node(t_env *envb, char *search)
 {

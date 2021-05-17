@@ -204,4 +204,7 @@ void						set_exit_status(void);
 char						*not_part(char *str);
 int							error_redi_one(char c, int i, char *line);
 
+
+void            			tester(t_lexer *sort, t_command *command);
+
 #endif

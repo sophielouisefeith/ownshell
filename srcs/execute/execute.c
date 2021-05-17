@@ -82,7 +82,10 @@ static void		determine_fdout(t_command **command, t_execute **exe,
 									t_env **envb, int i)
 {
 	if (i == (*exe)->len_list - 1)
+	{
+		//printf("make a new file\n");
 		(*exe)->fdout = fill_fdout((*command)->output, (*exe)->tmpout);
+	}
 	else if ((*command)->sem && (*command)->output)
 	{
 		execute_output(command, exe, envb);
@@ -90,14 +93,20 @@ static void		determine_fdout(t_command **command, t_execute **exe,
 	}
 	else if ((*command)->pipe_after)
 	{
+																							//printf("*********************************pipe after[%d]\n", (*command)->pipe_after);
+																	
 		if ((*command)->pipe_after && (*command)->output)
+		{				
+			//printf("output\n");			
 			execute_output(command, exe, envb);
+		}
 		pipe((*exe)->fdpipe);
 		(*exe)->fdout = (*exe)->fdpipe[1];
 		(*exe)->fdin = (*exe)->fdpipe[0];
 	}
 	else
 		(*exe)->fdout = dup((*exe)->tmpout);
+	/*function copies a file descriptor to another file descriptor.*/
 	dup2((*exe)->fdout, 1);
 	close((*exe)->fdout);
 }
@@ -110,6 +119,7 @@ static int		determine_fdin(t_command *command, t_execute **exe)
 	{
 																									//printf("************************************---[%s]\n", command->input->str_input);
 		(*exe)->fdin = open(command->input->str_input, O_RDONLY);
+		//printf("newfile\n");
 		if ((*exe)->fdin == -1)
 		{
 			errno = ENOENT;
@@ -125,8 +135,6 @@ static int		determine_fdin(t_command *command, t_execute **exe)
 
 
 /* with all the collected data we will use execute to 
-1. 
-2. 
 
  */
 void			*execute(t_command **command, t_env **envb)

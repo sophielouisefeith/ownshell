@@ -41,6 +41,7 @@ static void		print_declare_x_env(t_env **envb)
 	}
 }
 
+
 static int		not_present_in_env(char **array, t_env **envb, int equal)
 {
 	t_env	*tmp;

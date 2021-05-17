@@ -12,8 +12,8 @@ t_env			*ll_new_node_env(char *name, char *value, int equal)
 	new->value = value;
 	new->equal = equal;
 	new->next = NULL;
-															//printf("***************************************envlist[%s]\n", new->name);
-															//printf("***************************************envlist[%d]\n", new->equal);
+															//printf("***************************************NAME[%s]\n", new->name);
+															//printf("***************************************VALUE[%s]\n", new->value);
 	return (new);
 }
 

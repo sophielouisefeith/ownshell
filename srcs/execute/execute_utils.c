@@ -15,19 +15,28 @@ static int		lstsize(t_command *command)
 
 int				fill_fdout(t_output *output, int tmpout)
 {
+	
 	int			fdout;
 
 	if (output)
 	{
 		while (output)
 		{
+			/*make a newfile  output*/
+			//printf("fileoutput\n");
 			if (output && output->token == token_redirection_greater)
+			{
 				fdout = open(output->str_output,\
 				O_RDWR | O_CREAT | O_TRUNC, 0644);
+				//printf("add a new file\n");
+			}
 			else if (output && output->token == \
 			token_redirection_dgreater)
+			{
+				//printf("append content\n");
 				fdout = open(output->str_output, \
-				O_RDWR | O_CREAT | O_APPEND, 0644);
+				O_RDWR | O_CREAT | O_APPEND, 0644);   /*append we add the output to the file*/
+			}
 			output = output->next_output;
 		}
 	}
@@ -39,6 +48,7 @@ int				fill_fdout(t_output *output, int tmpout)
 void			execute_output(t_command **command, t_execute **exe,
 								t_env **envb)
 {
+	
 	(*exe)->fdout = fill_fdout((*command)->output, (*exe)->tmpout);
 	dup2((*exe)->fdout, 1);
 	close((*exe)->fdout);
@@ -57,11 +67,7 @@ void			*clean_exit_execute(t_execute **exe)
 
 
 /* when empty return malloc fail
-1. dup 
-
-
 */
-
 
 void			initialise_execute(t_command *command, t_execute **exe)
 {
